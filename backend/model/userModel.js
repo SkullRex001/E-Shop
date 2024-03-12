@@ -52,4 +52,17 @@ const userSchema = new mongoose.Schema({
 
 })
 
+
+//JWT
+
+userSchema.methods.getJWTToken = () => {
+    return jwt.sign({id : this._id} , process.env.JWT_SECREAT , {
+        expiresIn : process.env.JWT_EXPIRE
+    } )
+
+}
+
+
+
+
 module.exports = mongoose.model('User' , userSchema)
