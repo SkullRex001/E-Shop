@@ -62,6 +62,12 @@ userSchema.methods.getJWTToken = () => {
 
 }
 
+//Compare password
+
+userSchema.methods.comaprePassword = async (enteredPassword)=>{
+    return await bcrypt.compare(enteredPassword , this.password)
+}
+
 
 
 

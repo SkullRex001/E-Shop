@@ -15,9 +15,7 @@ const sendToken = (user , statusCode , res)=>{
         user,
         token
     })
-
-
-
-
     
 }
+
+module.exports = sendToken
